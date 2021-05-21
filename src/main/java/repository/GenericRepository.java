@@ -7,20 +7,14 @@ public interface GenericRepository <T,ID> {
 
     T getById (ID id) throws Exception;
 
-    void save (T t) ;
+    void save (T t) throws Exception;
 
     void update (T t) throws Exception;
 
-    void delete (T t) throws Exception;
+    void deleteById (ID id) throws Exception;
 
     List<T> getAll() throws Exception;
 
-    List <T> stringToData (List<String> stringList) throws Exception;
 
-    List <String> dataToString (List <T> tList) throws Exception;
-
-    String dataToString (T t);
-
-    ID getLastId() throws Exception;
 
 }

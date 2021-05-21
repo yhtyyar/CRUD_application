@@ -5,58 +5,31 @@ import repository.RegionRepository;
 
 import java.util.List;
 
-public class JsonRegionRepositoryImpl implements RegionRepository {
+public class JsonRegionRepositoryImpl extends JsonRepository implements RegionRepository {
 
-    private final static String JSON_NAME = "regions.json";
-
-
-    public Region getId(Long aLong) throws Exception {
-        return null;
-    }
-
-
-    public void create(Region region) throws Exception {
-
-    }
 
     @Override
     public Region getById(Long aLong) throws Exception {
         return null;
     }
 
-    public void save(Region item) {
+    @Override
+    public void save(Region region) throws Exception {
 
     }
 
-    public void update(Region item) throws Exception {
+    @Override
+    public void update(Region region) throws Exception {
 
     }
 
-    public void delete(Region item) throws Exception {
+    @Override
+    public void deleteById(Long aLong) throws Exception {
 
     }
 
+    @Override
     public List<Region> getAll() throws Exception {
-        return null;
-    }
-
-
-    public List<Region> stringToData(List<String> items) throws Exception {
-        return null;
-    }
-
-
-    public List<String> dataToString(List<Region> items) throws Exception {
-        return null;
-    }
-
-    @Override
-    public String dataToString(Region region) {
-        return null;
-    }
-
-    @Override
-    public Long getLastId() throws Exception {
         return null;
     }
 }

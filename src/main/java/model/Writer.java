@@ -8,24 +8,35 @@ public class Writer  {
     private Long id;
     private String firstName;
     private String lastName;
-    private Long postId;
     private List<Post> posts;
-    private Region region;
+    private Region nameRegion;
+
+    public Writer(Long id, String firstName, String lastName, List<Post> posts, Region nameRegion ) {
+
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.posts = posts;
+        this.nameRegion = nameRegion;
+    }
+
+    public Writer (String firstName, String lastName, Region region) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.nameRegion = region;
+    }
 
     public Long getId() {
         return id;
     }
 
-
     public void setId(Long id) {
         this.id = id;
     }
 
-
     public String getFirstName() {
         return firstName;
     }
-
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -39,14 +50,6 @@ public class Writer  {
         this.lastName = lastName;
     }
 
-    public Long getPostId() {
-        return postId;
-    }
-
-    public void setPostId(Long postId) {
-        this.postId = postId;
-    }
-
     public List<Post> getPosts() {
         return posts;
     }
@@ -55,11 +58,18 @@ public class Writer  {
         this.posts = posts;
     }
 
-    public Region getRegion() {
-        return region;
+    public Region getNameRegion() {
+        return nameRegion;
     }
 
-    public void setRegion(Region region) {
-        this.region = region;
+    public void setNameRegion(Region nameRegion) {
+        this.nameRegion = nameRegion;
+    }
+
+    @Override
+    public String toString() {
+
+        return "Writer | " +  + id + " | " + firstName +   " | " + lastName +
+                " | " + posts +  " | " + nameRegion + " |";
     }
 }
