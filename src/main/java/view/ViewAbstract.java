@@ -18,6 +18,7 @@ public abstract class ViewAbstract {
     final String GET_ALL = "get_all";
     final String DELETE = "delete";
     final String HELP_ME = "help_me";
+    final String BACK_TO_BEGINNING = "back";
     final String EXIT = "exit";
     final String REPOSITORY_NAME;
 
@@ -62,6 +63,10 @@ public abstract class ViewAbstract {
                     allRecordings();
                     break;
 
+                case BACK_TO_BEGINNING:
+                    backToBeginning();
+                    break;
+
                 case EXIT:
                     exit();
                     break;
@@ -87,6 +92,8 @@ public abstract class ViewAbstract {
     abstract void allRecordings();
 
     abstract void helpMe();
+
+    abstract void backToBeginning();
 
     void exit() {
 

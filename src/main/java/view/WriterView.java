@@ -199,10 +199,9 @@ public class WriterView  extends ViewAbstract{
     @Override
     void helpMe() {
 
-        show("Данные про писателей будет выводиться в виде:  " +
+        show("Данные про писателей будет выводиться в виде:  \n" +
                 "ID | FIRST_NAME | LAST_NAME | REGION | POSTS_ID \n" +
                 CREATE + " FIRST_NAME | FIRST_NAME | REGION_ID - создание нового пользователя \n" +
-                DELETE + " ID - удаление пользователя \n" +
                 GET_ALL + " - получение данных про всех писателей \n" +
                 GET_BY_ID + " ID - получение одного из писателей по ID \n" +
                 EDIT_BY_ID + " " + WRITER_FIRST_NAME + "  ID | FIRST_NAME - изменить имя писателя по ID \n" +
@@ -210,9 +209,19 @@ public class WriterView  extends ViewAbstract{
                 EDIT_BY_ID + " " + WRITER_REGION_NAME + " ID | REGION - изменить страну(регион) писателя по ID \n" +
                 EDIT_BY_ID + " " + WRITER_POSTS + " ID | POST1_ID  POST2_ID - изменить список записей(постов) писателей" +
                 " (вводите ID записей(постов) разделенными пробелом) \n" +
-                HELP_ME + " - вывод данных для помощи(справки)" +
+                DELETE + " ID - удаление пользователя \n" +
+                HELP_ME + " - вывод данных для помощи(справки)\n" +
+                BACK_TO_BEGINNING + " - вернуться в начало программы\n" +
                 EXIT + " - выход из программы");
     }
+
+
+    @Override
+    void backToBeginning() {
+        ViewAbstract viewAbstract = Views.getView();
+        viewAbstract.start();
+    }
+
 
     static ViewAbstract getInstance() {
         if (viewAbstract == null) {

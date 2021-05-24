@@ -22,10 +22,10 @@ public class Writer  implements StoredData {
 
     }
 
-    public Writer (String firstName, String lastName, Region region) {
+    public Writer (String firstName, String lastName, Region nameRegion) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.nameRegion = region;
+        this.nameRegion = nameRegion;
     }
 
     @Override
@@ -85,8 +85,20 @@ public class Writer  implements StoredData {
 
     @Override
     public String toString() {
+        StringBuilder postStringBuilder = new StringBuilder();
 
-        return "Writer | " +  + id + " | " + firstName +   " | " + lastName +
-                " | " + posts +  " | " + nameRegion + " |";
+        if (posts != null && posts.size() > 0) {
+
+            for (int i = 0; i < posts.size(); i++) {
+                postStringBuilder.append(posts.get(i).getId());
+
+                if (i != posts.size() -1) {
+                    postStringBuilder.append(" ");
+                }
+            }
+        }
+
+        return "Writer | "  + id + " | " + firstName +   " | " + lastName +
+                  " | " + nameRegion.getNameRegion() + " | " + postStringBuilder.toString();
     }
 }

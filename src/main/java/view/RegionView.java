@@ -139,7 +139,15 @@ public class RegionView extends ViewAbstract{
                 GET_ALL + " - получение всех стран(регионов) \n" +
                 DELETE + " ID - удаление страны(региона) \n" +
                 HELP_ME + " - вывод данных для помощи(справки) \n" +
+                BACK_TO_BEGINNING + " - вернуться в начало программы\n" +
                 EXIT + " - выход из программы");
+    }
+
+
+    @Override
+    void backToBeginning() {
+        ViewAbstract viewAbstract = Views.getView();
+        viewAbstract.start();
     }
 
 

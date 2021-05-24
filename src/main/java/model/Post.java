@@ -1,6 +1,8 @@
 package model;
 
 
+import javafx.scene.input.DataFormat;
+
 import java.time.LocalDate;
 
 public class Post implements StoredData {
@@ -77,6 +79,12 @@ public class Post implements StoredData {
     }
     @Override
     public String toString() {
-        return "Post | " + id + " | " + content + " | " + created + " | " + updated + " |";
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(id).append(" | ");
+        stringBuilder.append(created).append(" | ").append(updated);
+        stringBuilder.append("\n").append(content);
+
+        return stringBuilder.toString();
     }
 }

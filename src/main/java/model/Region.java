@@ -46,6 +46,6 @@ public class Region  implements StoredData {
 
     @Override
     public String toString() {
-        return "Region | " + + id + " | " + nameRegion + " |";
+        return "Region | " + + id + " | " + nameRegion ;
     }
 }

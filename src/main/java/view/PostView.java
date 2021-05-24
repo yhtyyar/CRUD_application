@@ -132,6 +132,7 @@ public class PostView extends ViewAbstract{
                 GET_ALL + " - получение всех записей(постов) \n" +
                 EDIT_BY_ID + " ID | CONTENT - изменение записи(поста) по ID \n" +
                 HELP_ME + " - вывод данных для помощи(справки)\n\t" +
+                BACK_TO_BEGINNING + " - вернуться в начало программы\n" +
                 EXIT + " - выход из программы");
     }
 
@@ -155,6 +156,13 @@ public class PostView extends ViewAbstract{
         }
         return stringBuilder.toString();
     }
+
+    @Override
+    void backToBeginning() {
+        ViewAbstract viewAbstract = Views.getView();
+        viewAbstract.start();
+    }
+
 
     static ViewAbstract getInstance() {
 
