@@ -5,15 +5,15 @@ import java.util.List;
 
 public interface GenericRepository <T,ID> {
 
-    T getById (ID id) throws Exception;
+    T getById (ID id);
 
-    void save (T t) throws Exception;
+    T save  (T t);
 
-    void update (T t) throws Exception;
+    T update  (T t);
 
-    void deleteById (ID id) throws Exception;
+    void deleteById (ID id);
 
-    List<T> getAll() throws Exception;
+    List<T> getAll() ;
 
 
 

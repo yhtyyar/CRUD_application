@@ -1,35 +1,56 @@
 package repository.json;
 
 import model.Region;
+import model.StoredData;
 import repository.RegionRepository;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class JsonRegionRepositoryImpl extends JsonRepository implements RegionRepository {
+public class JsonRegionRepositoryImpl extends JsonRepository<Region>  implements RegionRepository {
 
 
-    @Override
-    public Region getById(Long aLong) throws Exception {
-        return null;
+    public JsonRegionRepositoryImpl(String fileName, Type listType) {
+        super(fileName, listType);
     }
 
     @Override
-    public void save(Region region) throws Exception {
+    public Region getById(Long id) {
 
+        return (Region) super.getById(id);
     }
 
     @Override
-    public void update(Region region) throws Exception {
+    public Region save(Region region)  {
+        super.save(region);
 
+        return region;
     }
 
     @Override
-    public void deleteById(Long aLong) throws Exception {
+    public Region update(Region region)  {
+        super.update(region);
 
+        return region;
     }
 
     @Override
-    public List<Region> getAll() throws Exception {
-        return null;
+    public void deleteById(Long id)  {
+
+        super.deleteById(id);
+    }
+
+    @Override
+    public List<Region> getAll()  {
+
+        List <StoredData> storedList = super.getAllRecordings();
+
+        if (storedList.size() == 0) {
+            return  new ArrayList<>();
+        }
+        return storedList.stream().map((r) -> (Region) r)
+                .collect(Collectors.toList());
     }
 }

@@ -1,7 +1,7 @@
 package model;
 
 
-public class Region  {
+public class Region  implements StoredData {
 
     private Long id;
     private String nameRegion;
@@ -19,22 +19,29 @@ public class Region  {
         this.nameRegion = nameRegion;
     }
 
+
+    @Override
     public Long getId() {
         return id;
     }
-
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
 
     public String getNameRegion() {
         return nameRegion;
     }
 
+    @Override
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public void setNameRegion(String nameRegion) {
         this.nameRegion = nameRegion;
+    }
+
+    @Override
+    public void copyFrom(StoredData stored) {
+        this.nameRegion = ((Region)stored).getNameRegion();
+
     }
 
     @Override

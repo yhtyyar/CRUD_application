@@ -3,7 +3,7 @@ package model;
 
 import java.time.LocalDate;
 
-public class Post  {
+public class Post implements StoredData {
 
     private Long id;
     private String content;
@@ -15,7 +15,7 @@ public class Post  {
     }
 
     public Post(Long id, String content) {
-        this.id = id;
+        this(id);
         this.content = content;
     }
 
@@ -26,10 +26,19 @@ public class Post  {
         this.updated = updated;
     }
 
+    public Post (String content) {
+
+        this.content = content;
+        created = LocalDate.now();
+        updated = LocalDate.now();
+    }
+
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
@@ -59,6 +68,13 @@ public class Post  {
         this.updated = updated;
     }
 
+
+    @Override
+    public void copyFrom(StoredData stored) {
+        this.content = ((Post) stored).getContent();
+        updated = LocalDate.now();
+
+    }
     @Override
     public String toString() {
         return "Post | " + id + " | " + content + " | " + created + " | " + updated + " |";
