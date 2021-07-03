@@ -1,4 +1,7 @@
 # CRUD_application
+
+<a href="https://www.codefactor.io/repository/github/yhtyyar/crud_application"><img src="https://www.codefactor.io/repository/github/yhtyyar/crud_application/badge" alt="CodeFactor" /></a>
+
 Необходимо реализовать консольное CRUD приложение, которое имеет следующие сущности:
 
 Writer(id,  firstName,  lastName,  List<Post> posts,  Region region)
